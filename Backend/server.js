@@ -24,6 +24,8 @@ app.get('/api/global-news', async (req, res) => {
 // API Endpoint for Indian Stock Exchange data
 app.get('/api/indian-stocks', async (req, res) => {
     const { symbol } = req.query;
+    console.log('Received symbol:', symbol);
+
   
     if (!symbol) {
       return res.status(400).json({ error: 'Company symbol is required' });
@@ -33,7 +35,8 @@ app.get('/api/indian-stocks', async (req, res) => {
       const response = await axios.get(
         `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=5min&outputsize=full&apikey=${process.env.INDIAN_NEWS_API_KEY}`
       );
-  
+      console.log(process.env.INDIAN_NEWS_API_KEY)
+      console.log('API response data:', response.data);
       const data = response.data;
   
       if (!data || !data['Time Series (5min)']) {
@@ -42,7 +45,7 @@ app.get('/api/indian-stocks', async (req, res) => {
   
       res.json(data);
     } catch (error) {
-      console.error(`Error fetching stock data for symbol ${symbol}:`, error.message);
+      console.error(`Error fetching stock data for symbol ${symbol}:`, error,symbol);
       res.status(500).json({ error: 'Failed to fetch stock data' });
     }
   });
@@ -61,7 +64,7 @@ app.get('/api/crypto-trends', async (req, res) => {
         data: response.data.data, // Cryptocurrency array
       });
     } catch (error) {
-      console.error('Error fetching cryptocurrency data:', error.message);
+      console.error('Error fetching cryptocurrency data:', error);
       res.status(500).json({ error: 'Error fetching cryptocurrency data' });
     }
   });
