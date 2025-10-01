@@ -1,0 +1,20 @@
+{
+  "name": "miniproject",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/HariTeamCap/cap-FiNewz-274-cap-hari#readme",
+  "bugs": {
+    "url": "https://github.com/HariTeamCap/cap-FiNewz-274-cap-hari/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HariTeamCap/cap-FiNewz-274-cap-hari.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
