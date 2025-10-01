@@ -174,7 +174,7 @@
       const loading = document.getElementById('loading');
 
       try {
-        const response = await fetch('http://localhost:3000/api/global-news');
+        const response = await fetch('https://finewzbackend.onrender.com/api/global-news');
         const news = await response.json();
         loading.style.display = 'none';
 

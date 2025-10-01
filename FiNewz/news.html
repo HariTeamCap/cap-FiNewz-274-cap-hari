@@ -230,7 +230,7 @@
       newsItems.innerHTML = '<p>Loading news...</p>';
 
       try {
-        const response = await fetch(`http://localhost:3000/api/news-feed?category=${category}`);
+        const response = await fetch(`https://finewzbackend.onrender.com/api/news-feed?category=${category}`);
         const articles = await response.json();
 
         // Clear the loading text

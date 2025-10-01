@@ -221,7 +221,7 @@
 
       try {
         // Fetch stock data from the backend for the given symbol
-        const response = await fetch(`http://localhost:3000/api/indian-stocks?symbol=${companySymbol}`);
+        const response = await fetch(`https://finewzbackend.onrender.com/api/indian-stocks?symbol=${companySymbol}`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }

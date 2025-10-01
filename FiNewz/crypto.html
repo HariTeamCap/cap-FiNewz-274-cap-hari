@@ -193,7 +193,7 @@
       const dataLimit = document.getElementById('dataLimit').value;
 
       try {
-        const response = await fetch('http://localhost:3000/api/crypto-trends');
+        const response = await fetch('https://finewzbackend.onrender.com/api/crypto-trends');
         const apiData = await response.json();
         loading.style.display = 'none';
 
